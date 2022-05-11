@@ -12,7 +12,12 @@ const isIdValid = (req, res, next) => {
 const isObjectBodyValid = (req, res, next) => {
   const body = req.body;
 
-  if (!body || !body.descricao || !body.valor || !body.atingido)
+  if (
+    !body ||
+    !body.descricao ||
+    typeof body.atingido != 'boolean' ||
+    !body.valor
+  )
     return res.status(400).send({ message: `You didn't fill all fields!` });
 
   next();
