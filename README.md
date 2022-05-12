@@ -1,2 +1,2 @@
-# medicbank-express-mongodb
+# economia-express-mongodb
 API using mongodb
